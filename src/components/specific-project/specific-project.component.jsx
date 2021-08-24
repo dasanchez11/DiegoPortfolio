@@ -8,6 +8,7 @@ import { useLocation } from 'react-router-dom';
 
 import ImageInput from '../imageInput/imageInput.component';
 import SpecificDataPrediction from './specific-project.types/specific-project.types.data';
+import { useCallback } from 'react';
 
 
 const SProject = () => {
@@ -29,11 +30,11 @@ const SProject = () => {
         artificialIntelligence:ImageInput
         };
 
-    const getComponent = () =>{
+    const getComponent = useCallback(() =>{
         if (tags.includes('artificialIntelligence')) {
             setComponentToRend('artificialIntelligence')
         }
-    }
+    },[tags])
 
 
     useEffect(()=>{
