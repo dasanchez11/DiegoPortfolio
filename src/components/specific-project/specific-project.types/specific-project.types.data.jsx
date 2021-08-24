@@ -10,7 +10,6 @@ const SpecificDataPrediction = ({data, setName,name}) => {
             
         }
     },[data,setName])
-    console.log(name)
 
     const onInputChange = (e) =>{
         e.preventDefault();

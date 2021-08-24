@@ -9,6 +9,7 @@ import { useLocation } from 'react-router-dom';
 import ImageInput from '../imageInput/imageInput.component';
 import SpecificDataPrediction from './specific-project.types/specific-project.types.data';
 import { useCallback } from 'react';
+import image from '../../images/AiPicture.jpg'
 
 
 const SProject = () => {
@@ -18,7 +19,6 @@ const SProject = () => {
 
     const location = useLocation()
     const {machineLearningId,tags} = location.state
-    console.log(location)
     
     const [isLoading, setLoading] = useState(false)
     const [results, setResults] = useState(false)
@@ -47,7 +47,6 @@ const SProject = () => {
         
     },[machineLearningId,tags,getComponent])  
 
-    console.log(componentToRend)
 
 
     const handleClick = async  ()  => {
@@ -71,7 +70,6 @@ const SProject = () => {
         setResults(true)
     }
 
-    console.log(responseResults)
 
     const outsideClick = (e) => {
         if (results === true) {
@@ -98,7 +96,7 @@ const SProject = () => {
                         {data.description}
                     </p>
                 </div>
-                <img src='https://health.clevelandclinic.org/wp-content/uploads/sites/3/2017/01/HeartAnatomy.jpg' alt='' className='overview__image'/>
+                <img src={image} alt='' className='overview__image'/>
             </div>
                     <fieldset className="parametersField">
                         <legend className=''>Parameters</legend>
