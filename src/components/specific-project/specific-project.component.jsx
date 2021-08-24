@@ -44,7 +44,7 @@ const SProject = () => {
         getData();
         getComponent();
         
-    },[machineLearningId,tags])  
+    },[machineLearningId,tags,getComponent])  
 
     console.log(componentToRend)
 
