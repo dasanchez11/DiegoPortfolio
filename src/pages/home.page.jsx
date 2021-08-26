@@ -3,7 +3,7 @@ import React, {useEffect, useState} from 'react' ;
 import './home.styles.scss'
 import Loader from '../components/loader/loader.component';
 import axios from 'axios'
-import Card from '../components/card/card.component';
+// import Card from '../components/card/card.component';
 
 
 const Home = () => {
@@ -103,7 +103,7 @@ const Home = () => {
                     {projectLoading ? 
                      <Loader /> : 
                      <>
-                        
+                       {console.log(fetchData)} 
                          {/* {
                          fetchData.filter(data => {
                             if (activeProject['active']==='all'){
