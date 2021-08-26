@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react' ;
 
 import './home.styles.scss'
 import Loader from '../components/loader/loader.component';
-// import axios from 'axios'
+import axios from 'axios'
 import Card from '../components/card/card.component';
 
 
@@ -14,21 +14,15 @@ const Home = () => {
     
     
     useEffect(() => {
-        const startProject =  () =>{
+        const startProject = async () =>{
             setProjectLoading(true)
             try {
-                // const data = await axios.get('https://portfolioapidiego.herokuapp.com/devProject/getDevProjects')
-                // setFetchData(data.data.project)
-                
-                fetch('https://portfolioapidiego.herokuapp.com/devProject/getDevProjects/',{
-                })
-                    .then(response => response.json())
-                    .then(response => setFetchData(response.project))
-                    .then(setActiveProject({
-                        'active': 'all'
-                    }))
-                    .then(setProjectLoading(false) )
-                
+                const data = axios.get('https://portfolioapidiego.herokuapp.com/devProject/getDevProjects/')
+                // const data = await axios.get('http://localhost:3001/devProject/getDevProjects/')
+                console.log(data)
+                setFetchData(data.data.project)
+                setActiveProject({'active': 'all'})
+                setProjectLoading(false) 
             } catch (error) {
                 console.log(error)
             }
@@ -108,7 +102,7 @@ const Home = () => {
                 <div className={`proyectsSection__projects ${projectLoading? 'loading' : ''}`} >
                     {projectLoading ? 
                      <Loader /> : 
-                     <div key={1}>
+                     <>
                          {
                          fetchData.filter(data => {
                             if (activeProject['active']==='all'){
@@ -122,7 +116,7 @@ const Home = () => {
                                 </div>
                              )
                          })}
-                     </div>
+                     </>
                     }
                 </div>
 

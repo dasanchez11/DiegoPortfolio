@@ -11,6 +11,7 @@ const ImageInput = ({setName}) =>{
             let dataURL = reader.result;
             let nLetters = dataURL.indexOf(";")
             let text = dataURL.slice(0,nLetters)
+            console.log(text)
             dataURL = dataURL.replace(text,"data:image/jpeg")
             let base64Image = dataURL.replace("data:image/jpeg;base64,","");
             base64Image = base64Image.replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/g, '');

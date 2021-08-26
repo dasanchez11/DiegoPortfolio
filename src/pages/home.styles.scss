@@ -44,10 +44,6 @@ section{
     grid-gap: 1rem;
     text-align: center;
 
-    &__description{
-       
-    }
-    
     
     &__skills{
         
@@ -113,22 +109,10 @@ section{
             cursor: pointer;
             transition: transform 2s;
             min-width: 3rem;
-
-            &::after{
-                content: "";
-                border-bottom: 3px solid white;
-                top: 100%;
-                left: 50%;
-                height: 3px;
-                width: 1px;
-
-            }
             
 
             &.active{
                 border-bottom: 3px solid white;
-                
-                
                 
             }
            
