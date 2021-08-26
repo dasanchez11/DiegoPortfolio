@@ -2,8 +2,9 @@ import React, {useEffect, useState} from 'react' ;
 
 import './home.styles.scss'
 import Loader from '../components/loader/loader.component';
-import axios from 'axios'
-// import Card from '../components/card/card.component';
+// import axios from 'axios'
+import Card from '../components/card/card.component';
+import fetchDataLocal from './projectData';
 
 
 const Home = () => {
@@ -13,12 +14,12 @@ const Home = () => {
 
     
     useEffect(() => {
-
-        (async () =>{
+        const startProject = async () =>{
             setProjectLoading(true)
             try {
-                const data = await axios.get('https://portfolioapidiego.herokuapp.com/devProject/getDevProjects')
-                setFetchData(data.data.project)
+                // const data = await axios.get('https://portfolioapidiego.herokuapp.com/devProject/getDevProjects')
+                // setFetchData(data.data.project)
+                setFetchData(fetchDataLocal)
                 setActiveProject({
                     'active': 'all'
                 })
@@ -26,8 +27,8 @@ const Home = () => {
             } catch (error) {
                 console.log(error)
             }
-            
-        })()
+        }
+        startProject();
     },[setProjectLoading,setFetchData,setActiveProject])
 
 
@@ -104,7 +105,7 @@ const Home = () => {
                      <Loader /> : 
                      <>
                        {console.log(fetchData)} 
-                         {/* {
+                         {
                          fetchData.filter(data => {
                             if (activeProject['active']==='all'){
                                 return !data.tags.includes('')
@@ -116,7 +117,7 @@ const Home = () => {
                                         <Card  cardData={data} /> 
                                 </div>
                              )
-                         })} */}
+                         })}
                      </>
                     }
                 </div>
