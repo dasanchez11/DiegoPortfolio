@@ -104,7 +104,7 @@ const Home = () => {
                      <Loader /> : 
                      <>
                         
-                         {
+                         {/* {
                          fetchData.filter(data => {
                             if (activeProject['active']==='all'){
                                 return !data.tags.includes('')
@@ -116,7 +116,7 @@ const Home = () => {
                                         <Card  cardData={data} /> 
                                 </div>
                              )
-                         })}
+                         })} */}
                      </>
                     }
                 </div>
