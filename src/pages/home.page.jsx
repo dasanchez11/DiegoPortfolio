@@ -4,7 +4,7 @@ import './home.styles.scss'
 import Loader from '../components/loader/loader.component';
 // import axios from 'axios'
 import Card from '../components/card/card.component';
-import fetchDataLocal from './projectData';
+
 
 
 const Home = () => {
@@ -19,7 +19,10 @@ const Home = () => {
             try {
                 // const data = await axios.get('https://portfolioapidiego.herokuapp.com/devProject/getDevProjects')
                 // setFetchData(data.data.project)
-                setFetchData(fetchDataLocal)
+                const data = await fetch('https://portfolioapidiego.herokuapp.com/devProject/getDevProjects',{
+                    
+                }).then(response => response.json())
+                setFetchData(data.project)
                 setActiveProject({
                     'active': 'all'
                 })
@@ -104,7 +107,6 @@ const Home = () => {
                     {projectLoading ? 
                      <Loader /> : 
                      <>
-                       {console.log(fetchData)} 
                          {
                          fetchData.filter(data => {
                             if (activeProject['active']==='all'){
