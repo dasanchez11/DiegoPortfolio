@@ -19,7 +19,7 @@ const Home = () => {
             try {
                 // const data = await axios.get('https://portfolioapidiego.herokuapp.com/devProject/getDevProjects')
                 // setFetchData(data.data.project)
-                const data = await fetch('https://portfolioapidiego.herokuapp.com/devProject/getDevProjects',{
+                const data = await fetch('https://portfolioapidiego.herokuapp.com/devProject/getDevProjects/',{
                     
                 }).then(response => response.json())
                 setFetchData(data.project)

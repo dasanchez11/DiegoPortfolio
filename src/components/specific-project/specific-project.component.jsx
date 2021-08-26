@@ -39,7 +39,7 @@ const SProject = () => {
 
     useEffect(()=>{
         const getData = async () =>{
-            const fetch = await axios.get(`https://portfolioapidiego.herokuapp.com/aiProject/${machineLearningId}`);
+            const fetch = await axios.get(`https://portfolioapidiego.herokuapp.com/aiProject/${machineLearningId}/`);
             setData(fetch.data.project);
         };
         getData();
@@ -55,24 +55,10 @@ const SProject = () => {
         let fetch_results = ""
         try {
             
-            // fetch_results = await axios.post(` https://machinelearningpred.herokuapp.com/predict_${data.dir}`, {
-            //     data: JSON.stringify(name)
-            // })
-            fetch_results = await fetch(`https://machinelearningpred.herokuapp.com/predict_${data.dir}`,{
-                // Adding method type
-            method: "POST",
+            fetch_results = await axios.post(` https://machinelearningpred.herokuapp.com/predict_${data.dir}`, {
+                data: JSON.stringify(name)
+            })
             
-            // Adding headers to the request
-            headers: {
-                'Accept': 'application/json',
-                "Content-type": "application/json; charset=UTF-8"
-            },
-            // Adding body or contents to send
-            body: {data:JSON.stringify(name)}
-            
-            }).then(res => res.json())
-
-            console.log(fetch_results)
             setResponse(fetch_results.data.prediction)
         } catch (error) {
             console.log(error)
