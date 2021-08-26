@@ -11,22 +11,24 @@ const Home = () => {
     const [activeProject, setActiveProject] = useState([])
     const [projectLoading, setProjectLoading] = useState(false)
     const [fetchData, setFetchData] = useState([])
-
+    
     
     useEffect(() => {
-        const startProject = async () =>{
+        const startProject =  () =>{
             setProjectLoading(true)
             try {
                 // const data = await axios.get('https://portfolioapidiego.herokuapp.com/devProject/getDevProjects')
                 // setFetchData(data.data.project)
-                const data = await fetch('https://portfolioapidiego.herokuapp.com/devProject/getDevProjects/',{
-                    
-                }).then(response => response.json())
-                setFetchData(data.project)
-                setActiveProject({
-                    'active': 'all'
+                
+                fetch('https://portfolioapidiego.herokuapp.com/devProject/getDevProjects/',{
                 })
-                setProjectLoading(false)
+                    .then(response => response.json())
+                    .then(response => setFetchData(response.project))
+                    .then(setActiveProject({
+                        'active': 'all'
+                    }))
+                    .then(setProjectLoading(false) )
+                
             } catch (error) {
                 console.log(error)
             }
@@ -106,7 +108,7 @@ const Home = () => {
                 <div className={`proyectsSection__projects ${projectLoading? 'loading' : ''}`} >
                     {projectLoading ? 
                      <Loader /> : 
-                     <>
+                     <div key={1}>
                          {
                          fetchData.filter(data => {
                             if (activeProject['active']==='all'){
@@ -120,7 +122,7 @@ const Home = () => {
                                 </div>
                              )
                          })}
-                     </>
+                     </div>
                     }
                 </div>
 
