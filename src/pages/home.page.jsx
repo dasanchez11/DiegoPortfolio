@@ -17,9 +17,8 @@ const Home = () => {
         const startProject = async () =>{
             setProjectLoading(true)
             try {
-                const data = axios.get('https://portfolioapidiego.herokuapp.com/devProject/getDevProjects/')
+                const data = await axios.get('https://portfolioapidiego.herokuapp.com/devProject/getDevProjects/')
                 // const data = await axios.get('http://localhost:3001/devProject/getDevProjects/')
-                console.log(data)
                 setFetchData(data.data.project)
                 setActiveProject({'active': 'all'})
                 setProjectLoading(false) 
