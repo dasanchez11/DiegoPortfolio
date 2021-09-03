@@ -95,6 +95,7 @@ section{
         padding-bottom: 1rem;
         max-width: 100%;
         position: relative;
+        margin: 0 2vw;
         
         ul{
             display: flex;
@@ -125,6 +126,7 @@ section{
         grid-template-columns: repeat(auto-fit,minmax(25rem,min-content));
         grid-gap: 1rem;
         justify-content: center;
+        margin: 0 1vw;
         
         
 

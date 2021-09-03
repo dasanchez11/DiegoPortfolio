@@ -5,14 +5,12 @@ import SiSklearn from '../iconComponent/SiSklearn';
 import SiPandas from '../iconComponent/SiPandas';
 
 import {BsLink} from 'react-icons/bs';
-import { div } from 'prelude-ls';
 import { useHistory } from 'react-router';
 
 
 const Card = ({cardData}) =>{
-   const {title,shortDescription,resources,gitHubLink,liveLink,tags,machineLearningId} = cardData
+   const {title,shortDescription,resources,gitHubLink,liveLink,tags,machineLearningId,image} = cardData
    const history = useHistory();
-
    const components = {
     redux:SiRedux,
     firebase: SiFirebase,
@@ -43,7 +41,7 @@ const Card = ({cardData}) =>{
     
 
     return(
-        <div className='card' style={{backgroundImage: `url(./images/${title.replace(/\s+/g, '')}.jpg)`}}>
+        <div className='card' style={{backgroundImage: `url(${image})` }}>
                 <div className='opacity card__content' >
                     <div className='card__content__title'>
                         <h2>{title}</h2>

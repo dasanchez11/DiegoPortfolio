@@ -47,7 +47,7 @@ const Home = () => {
 
     return(
         <div className='homePage'>
-            <section  id='header' className='headerSection' style={{ backgroundImage: `linear-gradient(to right bottom, rgba(0, 139, 139, 0.7), rgba(224, 255, 255, 0.7)),url(./images/background.jpg)` }}>
+            <section  id='header' className='headerSection' style={{ backgroundImage: `linear-gradient(to right bottom, rgba(0, 139, 139, 0.7), rgba(224, 255, 255, 0.7)),url('https://i.ibb.co/R49c3XF/background.jpg')` }}>
                 <h1 className='headerSection__name'>
                     Diego Sanchez
                 </h1>
