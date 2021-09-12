@@ -3,16 +3,21 @@ import React, {useState, useEffect} from 'react';
 
 
 
-const AIResult = ({response}) => {
-    const[load,setLoad] = useState(true)
+const AIResult = ({response,results}) => {
+    const[load,setLoad] = useState(!results)
 
     useEffect(()=> {
-        setLoad(false)
-    },[])
+        setTimeout(() => {
+        setLoad(state => !state)
+          }, 100)
+
+        // setLoad(results)
+
+    },[setLoad])
 
 
     return (
-        <div className={`aiResult ${load ? "" : "aiResult__active"}` }>
+        <div className={`aiResult ${load ? "aiResult__active" : ""}` }>
             <h3 className='aiResult__title'>Artificial Intelligence Result:</h3>
             <div className='aiResult__prediction'>{response.split(';').map((res,idx) =>{
                 return(<p key={idx} className='aiResult__prediction'>{res}</p>)

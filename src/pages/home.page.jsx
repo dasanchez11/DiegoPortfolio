@@ -1,9 +1,10 @@
-import React, {useEffect, useState} from 'react' ;
+import {useEffect, useState} from 'react' ;
 
 import './home.styles.scss'
 import Loader from '../components/loader/loader.component';
 import axios from 'axios'
 import Card from '../components/card/card.component';
+
 
 
 

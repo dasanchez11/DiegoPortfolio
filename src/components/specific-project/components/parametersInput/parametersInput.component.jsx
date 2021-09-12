@@ -1,7 +1,7 @@
 
 import { useEffect } from 'react';
 
-const SpecificDataPrediction = ({data, setName,name}) => {
+const ParametersInput = ({data, setName,name}) => {
 
     useEffect(()=>{
         for (let index = 0; index < data.attributes.length; index++) {
@@ -37,4 +37,4 @@ const SpecificDataPrediction = ({data, setName,name}) => {
     )
 }
 
-export default SpecificDataPrediction;
+export default ParametersInput;

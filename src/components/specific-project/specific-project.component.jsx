@@ -1,14 +1,13 @@
 import './specific-project.styles.scss';
-import React,{useState,useEffect} from 'react';
+import {useState,useEffect} from 'react';
 import Loader from '../loader/loader.component';
 import Button from '../button/button.component';
 import AIResult from '../aiResult/aiResult.component'
 import axios from 'axios';
 import { useLocation } from 'react-router-dom';
 
-import ImageInput from '../imageInput/imageInput.component';
-import SpecificDataPrediction from './specific-project.types/specific-project.types.data';
-import { useCallback } from 'react';
+import ImageInput from './components/imageInput/imageInput.component';
+import ParametersInput from './components/parametersInput/parametersInput.component';
 import image from '../../images/AiPicture.jpg'
 
 
@@ -18,35 +17,31 @@ const SProject = () => {
    
 
     const location = useLocation()
-    const {machineLearningId,tags} = location.state
+    const machineLearningId = location.pathname.split("/")[2]
     
     const [isLoading, setLoading] = useState(false)
     const [results, setResults] = useState(false)
     const [responseResults, setResponse] = useState("")
-    const [componentToRend, setComponentToRend] = useState('machineLearning')
+    const [componentToRend, setComponentToRend] = useState("")
 
     const components = {
-        machineLearning:SpecificDataPrediction,
-        artificialIntelligence:ImageInput
+        parameters:ParametersInput,
+        imageInput:ImageInput
         };
-
-    const getComponent = useCallback(() =>{
-        if (tags.includes('artificialIntelligence')) {
-            setComponentToRend('artificialIntelligence')
-        }
-    },[tags])
 
 
     useEffect(()=>{
+        
         const getData = async () =>{
-            const fetch = await axios.get(`https://portfolioapidiego.herokuapp.com/aiProject/${machineLearningId}/`);
+            //const fetch = await axios.get(`https://portfolioapidiego.herokuapp.com/aiProject/${machineLearningId}/`);
+            const fetch = await axios.get(`http://localhost:3001/aiProject/${machineLearningId}/`);
+            
+            setComponentToRend(fetch.data.project.tag)
             setData(fetch.data.project);
         };
         getData();
-        getComponent();
         
-    },[machineLearningId,tags,getComponent])  
-
+    },[machineLearningId])  
 
 
     const handleClick = async  ()  => {
@@ -101,13 +96,13 @@ const SProject = () => {
                         <legend className=''>Parameters</legend>
                         { 
 
-                        isLoading ? <Loader /> : (     
+                        (isLoading || componentToRend==="") ? <Loader /> : (     
                                  <form className='specific-project__params'>
                                      <CompName data={data} setName={setName} name={name}/> 
                                 </form>
                             )
                         } 
-                        {results ? <AIResult response={responseResults}/> : "" }
+                        {results ? <AIResult response={responseResults} results={results}/> : "" }
                     </fieldset>
                     <Button onClick={handleClick} />
         </div>

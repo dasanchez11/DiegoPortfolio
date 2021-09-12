@@ -10,6 +10,7 @@ section{
 }
 
 .headerSection{
+    width: 100vw;
     background-size: cover;
     background-position: center;
     clip-path: polygon(0 0,100% 0, 100% 100%, 0 80vh);
@@ -39,33 +40,65 @@ section{
     font-size: 1.6rem;
     padding: 5rem 2rem;
     display: grid;
-    grid-template-columns:  repeat(auto-fit,minmax(30rem,min-content));
+    grid-template-columns:  repeat(auto-fit,minmax(20rem,min-content));
     justify-content: center;
     grid-gap: 1rem;
     text-align: center;
+    width: 100vw;
+
+    @media screen and (max-width: 717px){
+        height: 150vh;
+        clip-path: polygon(0 0,100% 15vh, 100% 100%, 0 135vh);
+        padding: 10rem 2rem;
+    }
+
+    @media screen and (max-width: 435px){
+        grid-template-columns:  repeat(auto-fit,minmax(80vw,min-content));
+        padding: 10rem 2rem;
+        width: 100%;
+    }
+
+    &__description{
+        align-self: center;
+        text-align: center;
+        hyphens: auto;
+        width: 100%;
+    }
 
     
     &__skills{
-        
         display: flex;
         flex-direction: column;
         text-align: center;
+        align-self: center;
 
         &-list{
             display: flex;
+            justify-content: center;
         }
     }
 
     & ul{
         text-align: left;
         margin-left: 2rem;
+        @media screen and (max-width: 435px){
+            &:not(:last-child){
+                 margin-left: 0px;
+            }
+            
+           
+
+        }
         
     }
 
     & li{
         list-style: none;
         margin-left: 2rem;
-        
+        @media screen and (max-width: 435px){
+            margin-left: 0;
+            
+        }
 
         &.python{
             list-style: square;
@@ -74,6 +107,7 @@ section{
 }
 
 .proyectsSection{
+    width: 100vw;
     clip-path: polygon(0 0,100% 15vh, 100% 100%, 0 100% );
     padding-top: 8rem;
     color: white;
@@ -110,7 +144,7 @@ section{
             cursor: pointer;
             transition: transform 2s;
             min-width: 3rem;
-            
+
 
             &.active{
                 border-bottom: 3px solid white;
@@ -128,6 +162,11 @@ section{
         justify-content: center;
         margin: 0 1vw;
         
+        @media screen and (max-width: 435px){
+            width: 100%;
+            margin: 0;
+            grid-template-columns: 1fr;
+        }
         
 
         
