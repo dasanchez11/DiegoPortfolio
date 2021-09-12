@@ -33,8 +33,8 @@ const SProject = () => {
     useEffect(()=>{
         
         const getData = async () =>{
-            //const fetch = await axios.get(`https://portfolioapidiego.herokuapp.com/aiProject/${machineLearningId}/`);
-            const fetch = await axios.get(`http://localhost:3001/aiProject/${machineLearningId}/`);
+            const fetch = await axios.get(`https://portfolioapidiego.herokuapp.com/aiProject/${machineLearningId}/`);
+            // const fetch = await axios.get(`http://localhost:3001/aiProject/${machineLearningId}/`);
             
             setComponentToRend(fetch.data.project.tag)
             setData(fetch.data.project);
