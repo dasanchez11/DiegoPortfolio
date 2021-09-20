@@ -1,8 +1,11 @@
 import { useState } from "react"
 import './contact.page.styles.scss'
 import axios from 'axios'
+import {useHistory} from 'react-router-dom'
+
 
 const ContactPage = () =>{
+    const history = useHistory()
     const [information, setInformation] = useState({email:"",name:"", message:""})
 
 
@@ -18,9 +21,17 @@ const ContactPage = () =>{
         }else if (information.name===""){
             window.alert('must enter a valid Name')
         }else {
-            axios.post('https://portfolioapidiego.herokuapp.com/contact/sendEmail', {
-                data: JSON.stringify(information)
-            })
+            const sendEmail = async () =>{
+                try {
+                    await axios.post('https://portfolioapidiego.herokuapp.com/contact/sendEmail', {
+                    data: JSON.stringify(information)
+                    })
+                } catch (error) {
+                    window.alert('An Error Occurred while sending data, please try again later')
+                }
+                history.push('/')
+                }
+        sendEmail()
         }
     }
 
