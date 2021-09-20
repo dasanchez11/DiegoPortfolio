@@ -48,7 +48,7 @@ const Header = () => {
         
         <ul className={`header__content ${clicked?"checked":""}`}>
             <li className="header__content__link"><a onClick={handleClick} className='header__content__link-item' href='/' >Home</a></li>
-            <li className="header__content__link"><a onClick={handleClick} className='header__content__link-item' href='/curriculum' >Curriculum</a></li>
+            {/* <li className="header__content__link"><a onClick={handleClick} className='header__content__link-item' href='/curriculum' >Curriculum</a></li> */}
             <li className="header__content__link"><a onClick={handleClick} className='header__content__link-item' href='/#projects' >Projects</a></li>
             <li className="header__content__link"><a onClick={handleClick}  className='header__content__link-item' href='/#about'>About</a></li>
             <li className="header__content__link"><a onClick={handleClick} className='header__content__link-item' href='/contact' >Contact</a></li>
