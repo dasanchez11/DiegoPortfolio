@@ -1,7 +1,7 @@
 import './App.css';
 
 import SProject from './components/specific-project/specific-project.component';
-import Home from './pages/home.page';
+import Home from './pages/home';
 import {Route, Switch} from 'react-router-dom';
 import ContactPage  from './pages/contact/contact.page';
 import NavigationBar from './components/navigationBar/navigationBar'
