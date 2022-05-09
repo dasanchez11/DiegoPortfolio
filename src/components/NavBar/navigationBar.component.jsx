@@ -4,7 +4,7 @@ import './navbar.styles.scss';
 import {FaConnectdevelop} from 'react-icons/fa'
 
 
-const NavBar = () => { 
+const NavigationBar = () => { 
     const [scroll, setScroll] = useState("")
     const [clicked, setClicked] = useState(false)
     
@@ -60,4 +60,4 @@ const NavBar = () => {
     </div>
 )}
 
-export default NavBar;
+export default NavigationBar;
