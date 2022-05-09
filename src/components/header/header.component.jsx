@@ -1,7 +1,7 @@
 import React from "react";
 import CTA from "./CTA";
-import HeaderSocials from "./HeaderSocials.component";
-import './Header.styles.css'
+import HeaderSocials from "./headerSocials.component";
+import './header.styles.css'
 import Picture1 from '../../assets/Picture1.png'
 
 

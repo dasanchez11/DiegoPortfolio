@@ -1,6 +1,6 @@
-import Header from '../components/header/Header.component';
-import About from '../components/about/About.component';
-import Portfolio from '../components/portfolio/Portfolio.component';
+import Header from '../components/header/header.component';
+import About from '../components/about/about.component';
+import Portfolio from '../components/portfolio/portfolio.component';
 
 
 

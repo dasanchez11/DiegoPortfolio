@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import {useEffect} from 'react';
-import './NavBar.styles.scss';
+import './navbar.styles.scss';
 import {FaConnectdevelop} from 'react-icons/fa'
 
 

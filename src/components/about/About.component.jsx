@@ -1,5 +1,5 @@
 import React from "react";
-import './About.styles.css';
+import './about.styles.css';
 import {FaAward} from 'react-icons/fa'
 import {FaUsers} from 'react-icons/fa'
 import {VscFolderLibrary} from 'react-icons/vsc'

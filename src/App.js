@@ -1,9 +1,10 @@
 import './App.css';
-import NavBar from './components/NavBar/NavBar.component'
+
 import SProject from './components/specific-project/specific-project.component';
 import Home from './pages/home.page';
 import {Route, Switch} from 'react-router-dom';
 import ContactPage  from './pages/contact/contact.page';
+import NavBar from './components/navbar/navbar.component';
 
 
 

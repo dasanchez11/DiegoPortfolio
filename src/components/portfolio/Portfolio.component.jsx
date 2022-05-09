@@ -1,6 +1,6 @@
 import React, {useState,useEffect} from "react";
 import axios from 'axios'
-import './Portfolio.styles.css';
+import './portfolio.styles.css';
 import PortFolioCard from "../portfolioCard/portfolioCard.component";
 import Loader from "../loader/loader.component";
 
