@@ -4,7 +4,7 @@ import SProject from './components/specific-project/specific-project.component';
 import Home from './pages/home.page';
 import {Route, Switch} from 'react-router-dom';
 import ContactPage  from './pages/contact/contact.page';
-import NavigationBar from './components/navbar/navigationBar.component'
+import NavigationBar from './components/navigationBar/navigationBar'
 
 
 
