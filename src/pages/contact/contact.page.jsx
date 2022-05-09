@@ -1,4 +1,4 @@
-import { useState } from "react"
+import React,{ useState } from "react"
 import './contact.page.styles.scss'
 import axios from 'axios'
 import {useHistory} from 'react-router-dom'

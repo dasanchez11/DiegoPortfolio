@@ -1,8 +1,3 @@
-
-
-// import './home.styles.scss'
-
-
 import Header from '../components/header/Header.component';
 import About from '../components/about/About.component';
 import Portfolio from '../components/portfolio/Portfolio.component';
