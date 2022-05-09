@@ -4,13 +4,13 @@
     border-radius: 15px;
     padding: 1rem;
     box-shadow: 0 2rem 5rem rgba(black,0.015);
-    background-color: lightgray;
-    color: white;
+    background-color: var(--color-primary);
+    color: black;
 
 
 
     &:hover{
-        background-color: darkgray;
+        background-color: white;
         cursor: pointer;
     }
 }

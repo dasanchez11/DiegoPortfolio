@@ -14,6 +14,7 @@ import image from '../../images/AiPicture.jpg'
 const SProject = () => {
     const [data,setData] = useState({attributes:[]})
     const [name, setName] = useState("")
+  
    
 
     const location = useLocation()
@@ -40,6 +41,7 @@ const SProject = () => {
             setData(fetch.data.project);
         };
         getData();
+        
         
     },[machineLearningId])  
 

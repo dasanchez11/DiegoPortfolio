@@ -5,7 +5,7 @@
     position: absolute;
     height: 100%;
     width: 100%;
-    background-color: rgba(0, 139, 139, 0.7); 
+    background-color: var(--color-bg); 
     color: white;
 
     display: flex;
@@ -58,23 +58,19 @@
         // font-size: inherit;
     }
 
-    &__button{
-        font-size: 1.3rem;
-        border: none;
-        border-radius: 100px;
-        padding: 1rem;
-        box-shadow: 0 2rem 5rem rgba(black,0.015);
-        background-color: lightgray;
-        color: white;
-        width: 100px;
-        align-self:flex-start;
-
-        &:hover{
-            background-color: darkgray;
-            cursor: pointer;
-        }
-    }
+   
    
 
+}
+
+.contact__button-cta{
+    display: flex;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    justify-content: left;
+
+    & .btn {
+        padding: 0.3rem 0.5rem ;
+    }
 }
 

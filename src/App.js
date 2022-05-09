@@ -1,5 +1,5 @@
 import './App.css';
-import Header from './components/header/header.component'
+import NavBar from './components/NavBar/NavBar.component'
 import SProject from './components/specific-project/specific-project.component';
 import Home from './pages/home.page';
 import {Route, Switch} from 'react-router-dom';
@@ -10,7 +10,7 @@ import ContactPage  from './pages/contact/contact.page';
 function App() {
   return (
     <div className="App">
-      <Header/> 
+      <NavBar/>
       <Switch>
         <Route exact={true} path='/' component={Home} />
         <Route exact path='/contact' component={ContactPage} />

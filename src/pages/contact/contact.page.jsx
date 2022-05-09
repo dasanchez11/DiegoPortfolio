@@ -36,7 +36,7 @@ const ContactPage = () =>{
     }
 
     return(
-        <div className='contact'>
+        <div className='contact' onSubmit={handleSumbit}>
             <div className='contact__title'>Contact</div>
             <div className='contact__name-title'>Name</div>
             <input onChange={handleInput} name='name' className='contact__name-value' placeholder='Enter your name' required></input>
@@ -44,7 +44,9 @@ const ContactPage = () =>{
             <input onChange={handleInput} name='email' type='email' className='contact__email-value' placeholder='Enter your email' required></input>
             <div className='contact__message-title'>Message</div>
             <textarea onChange={handleInput} name='message' className='contact__message-value' placeholder='Enter your message' required></textarea>
-            <button onClick={handleSumbit} className='contact__button'>SEND</button>
+            <div className="contact__button-cta">
+                <div className="btn" target="_blank">Send</div>
+            </div>
         </div>
     )
 }

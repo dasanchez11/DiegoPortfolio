@@ -1,4 +1,4 @@
-.header{
+.navbar{
     font-size: 1.2rem;
     position: fixed;
     display: flex;
@@ -31,7 +31,7 @@
             transition: background .4s ease-out;
 
             &.checked{
-                background: rgba(0, 139, 139, 1);
+                background: var(--color-bg);
                 transition: background .4s ease-out;
             }
         }
@@ -63,7 +63,7 @@
             height: 100vh;
             font-size: 2rem;
             color: white;
-            background: rgba(0, 139, 139, 1);
+            background: var(--color-bg);
             transition: 
                 opacity .8s .5s,
                 clip-path  .4s .5s;
@@ -91,6 +91,20 @@
             }
         }
     }
+    .menu{
+        display: flex;
+        flex-direction: row;
+        height:50% ;
+        width: 2rem;
+        border-radius: 3rem;
+        cursor: pointer;
+
+        &:hover{
+            background: var(--color-light);
+
+        }
+       
+    }
 
     .menuIcon{
         position:relative;
@@ -98,9 +112,13 @@
         cursor: pointer;
         z-index: 10;
         display: none;
+        // height: 100%;
 
         @media screen and (max-width: 767px) {
-            display: block;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            padding-left: 0.3rem;
             // top: 10vh;
             // left: 40vw;
         }
@@ -137,7 +155,7 @@
     }
 
     &.scrolled{
-        background:rgba(0, 139, 139, 0.9) ;
+        background: var(--color-bg) ;
         box-shadow: 0px 0px 8px rgba(0,0,0,.6);
 
         .menuIcon{

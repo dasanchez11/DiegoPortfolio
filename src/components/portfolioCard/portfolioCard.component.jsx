@@ -1,14 +1,11 @@
-import React from 'react';
-import './card.styles.scss';
-import {SiGithub,SiRedux, SiFirebase,SiFlask,SiReact,SiPython,SiPostgresql,SiReactrouter,SiNodeDotJs,SiMongodb, SiTensorflow} from 'react-icons/si';
+import './portfolioCard.styles.css'
+import {SiRedux, SiFirebase,SiFlask,SiReact,SiPython,SiPostgresql,SiReactrouter,SiNodedotjs,SiMongodb, SiTensorflow} from 'react-icons/si';
 import SiSklearn from '../iconComponent/SiSklearn';
 import SiPandas from '../iconComponent/SiPandas';
 
-import {BsLink} from 'react-icons/bs';
 import { useHistory } from 'react-router';
 
-
-const Card = ({cardData}) =>{
+const PortFolioCard = ({cardData}) => {
    const {title,shortDescription,resources,gitHubLink,liveLink,tags,machineLearningId,image} = cardData
    const history = useHistory();
    const components = {
@@ -16,7 +13,7 @@ const Card = ({cardData}) =>{
     firebase: SiFirebase,
     routerDom: SiReactrouter,
     react: SiReact,
-    node: SiNodeDotJs,
+    node: SiNodedotjs,
     flask: SiFlask,
     postgressSQL: SiPostgresql,
     mongoDb: SiMongodb,
@@ -38,27 +35,16 @@ const Card = ({cardData}) =>{
             window.open(liveLink, '_blank', 'noopener,noreferrer')
         }
     }
-    
 
-    return(
-        <div className='card' style={{backgroundImage: `url(${image})` }}>
-                <div className='opacity card__content' >
-                    <div className='card__content__title'>
-                        <h2>{title}</h2>
-                    </div>
-                    <div className='card__content__description'>
-                        <p>{shortDescription}</p>
-                    </div>
-                    <div className='card__content__references'>
-                        <div className='card__content__references-item' onClick={gitHubClick}>
-                            <SiGithub  className='card__content__references-item-logo'/>
-                            <p className='card__content__references-item-text'>Code</p>
-                        </div>
-                        {liveLink !== '' ? <div className='card__content__references-item' onClick={liveLinkClick}><BsLink size={30}/></div> : ''}
-                        
-
-                    </div>
-                    <div className='card__content__technologies'>
+    return (
+        <article className="portfolio__item" style={{backgroundImage: `url(${image})`}} >
+            {/* <div className="portfolio__item-image">
+                <img src={image}/>
+            </div> */}
+            <div className='portfolio__opacity'>
+                <h3>{title}</h3>
+                <h5>{shortDescription}</h5>
+                <div className='card__content__technologies'>
                     {resources.map((resource,idx) => {
                         const CompName = components[`${resource}`]
                         if (typeof CompName === 'undefined') {
@@ -69,13 +55,17 @@ const Card = ({cardData}) =>{
                         
                     })}
 
-                    </div>
                 </div>
-          
-        </div>
-    )
-
-};
-
-export default Card
-
+                <div className="portfolio__item-cta">
+                    <div className="btn" target="_blank" rel="noreferrer" onClick={gitHubClick} >GitHub</div>
+                    {liveLink !== '' ? 
+                    (
+                        <div className="btn btn-primary" target="_blank" rel="noreferrer"  onClick={liveLinkClick} >Live Demo</div>
+                    ): ('')}
+                </div>
+            </div>
+      </article>
+      );
+}
+ 
+export default PortFolioCard;
