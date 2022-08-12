@@ -1,8 +1,5 @@
 import './portfolioCard.styles.css'
-import {SiRedux, SiFirebase,SiFlask,SiReact,SiPython,SiPostgresql,SiReactrouter,SiNodedotjs,SiMongodb, SiTensorflow} from 'react-icons/si';
-import SiSklearn from '../iconComponent/SiSklearn';
-import SiPandas from '../iconComponent/SiPandas';
-
+import {SiCookiecutter,SiJsonwebtokens,SiRedux,SiMysql,SiSequelize,SiPandas,SiDocker, SiScikitlearn, SiFirebase,SiFlask,SiReact,SiPython,SiPostgresql,SiReactrouter,SiNodedotjs,SiMongodb, SiTensorflow} from 'react-icons/si';
 import { useHistory } from 'react-router';
 
 const PortFolioCard = ({cardData}) => {
@@ -18,10 +15,16 @@ const PortFolioCard = ({cardData}) => {
     postgressSQL: SiPostgresql,
     mongoDb: SiMongodb,
     python: SiPython,
-    scikitLearn:SiSklearn,
+    scikitLearn:SiScikitlearn,
     pandas: SiPandas,
-    tensorflow: SiTensorflow
+    tensorflow: SiTensorflow,
+    docker:SiDocker,
+    mySql:SiMysql,
+    sequelize:SiSequelize,
+    jwt:SiJsonwebtokens,
+    cookies:SiCookiecutter
     };
+
     const gitHubClick = (e) =>{
         e.preventDefault()
         window.open(gitHubLink, '_blank', 'noopener,noreferrer')
